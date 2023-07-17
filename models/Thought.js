@@ -26,17 +26,17 @@ const reactionSchema = new Schema(
     {
         toJSON: {
             getters: true,
+            virtuals: true,
+            transform: function (doc, ret) {
+                delete ret._id;
+            },
         },
         id: false,
     }
 );
 
 const thoughtSchema = new Schema(
-    {
-        thoughtId: {
-            type: Schema.Types.ObjectId,
-            default: () => new Types.ObjectId(),
-        },
+    {        
         thoughtText: {
             type: String,
             required: true,
