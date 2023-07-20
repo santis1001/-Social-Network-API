@@ -44,8 +44,15 @@ const userController = {
             if (!user) {
                 return res.status(404).json({ message: 'No user with that ID' })
             }
-            const thoughts = await Thought.deleteMany(req.params.userId);
-            if (!thoughts) {
+            const thoughtsToDelete = user.thoughts.map(id => ({ "_id": id }));
+            let deleteResult;
+            console.log(thoughtsToDelete);
+            try {
+                deleteResult = await Thought.deleteMany({ $or: thoughtsToDelete });
+            } catch (error) {
+                console.log(error);
+            }
+            if (!deleteResult) {
                 return res.status(404).json({ message: 'User deleted, but no thoughts found' });
             }
 

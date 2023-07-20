@@ -59,12 +59,12 @@ const thoughtController = {
             if (!thought) {
                 res.status(404).json({ message: 'No thoughts found with that ID' });
             }
-            const user = User.findOneAndUpdate(
+            const user = await User.findOneAndUpdate(
                 { _id: thought.userId },
                 { $pull: { thoughts: req.params.thoughtId } },
                 { new: true }
             );
-            res.json(thought);
+            res.json(user);
         } catch (err) {
             console.log(err);
             return res.status(500).json(err);
