@@ -449,7 +449,6 @@ async deleteReaction(req, res) {
 
 ```
 
-
 ## Video
 <sub style='font-weight: bold;'>* This is a preview. Click to watch full video.</sub>
 [![Social Network API Video ](./assets/preview.gif)](https://1drv.ms/v/s!Asj9JhD05ulbsx4FH2GL-z0Czl_w?e=b3U6OA)
