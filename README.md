@@ -2,6 +2,12 @@
 
 ## Description
 
+In this challenge, we setup a server that handles API requests. The API is responsible for handling requests related to user information and its associated thoughts and reactions.
+
+To handle the HTTP requests and responses, the code utilizes the Express framework, which provides a convenient way to create a server and define routes for handling different endpoints.
+
+For interacting with the database, the code uses Mongoose, a library for Node.js that handle the conection and CRUD request for MongoDB.
+
 ## User Story
 
 ```md
